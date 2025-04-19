@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "routes": [
+    { "src": "/slides", "dest": "/api/slides.js" },
+    { "src": "/vrcurl/(.*)", "dest": "/api/vrcurl.js" },
+    { "src": "/api/(.*)", "dest": "/api/server.js" },
+    { "src": "/assets/(.*)", "dest": "/public/assets/$1" },
+    { "src": "/", "dest": "/public/index.html" }
+  ]
+}

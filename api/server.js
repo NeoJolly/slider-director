@@ -19,6 +19,7 @@ app.use('/slides', limiter); // Apply rate limiting to the /slides endpoint
 // Endpoint to handle logging
 app.get('/slides', async (req, res) => {
   const url = req.query.url;
+  console.log(`Received request for /slides with URL: ${url}`);
   const poolFilePath = path.join(__dirname, 'pool.txt'); // Define the pool file path
   const vrcurlFolderPath = path.join(__dirname, 'vrcurl'); // Define the redirects folder path
 
@@ -77,6 +78,7 @@ app.get('/slides', async (req, res) => {
       res.status(500).send(errorMessage);
     }
   } else {
+    console.warn('No URL provided in the query parameter.');
     res.status(400).send('No URL provided.');
   }
 });
