@@ -60,3 +60,6 @@ build/
 # OS-specific files
 .DS_Store
 Thumbs.db
+log.txt
+redirects.txt
+pool.txt
