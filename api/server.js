@@ -16,19 +16,11 @@ const limiter = rateLimit({
 });
 app.use('/slides', limiter); // Apply rate limiting to the /slides endpoint
 
-// Define your redirects here
-const redirects = {
-    '/0': 'https://neojolly.github.io/home/showtime/paintings/1.jpg',
-    '/1': 'https://neojolly.github.io/home/showtime/paintings/2.jpg',
-    '/2': 'https://neojolly.github.io/home/showtime/paintings/3.jpg'
-    // Add more redirects as needed
-};
-
 // Endpoint to handle logging
 app.get('/slides', async (req, res) => {
   const url = req.query.url;
   const poolFilePath = path.join(__dirname, 'pool.txt'); // Define the pool file path
-  const redirectsFolderPath = path.join(__dirname, 'redirects'); // Define the redirects folder path
+  const vrcurlFolderPath = path.join(__dirname, 'vrcurl'); // Define the redirects folder path
 
   if (url) {
     try {
@@ -47,10 +39,10 @@ app.get('/slides', async (req, res) => {
       for (let i = 0; i < lines.length; i++) {
         const columns = lines[i].split(',');
         if (columns.length >= 2) {
-          const redirectUrl = columns[1].trim(); // Extract the URL
-          const redirectFilePath = path.join(redirectsFolderPath, `${i}.txt`);
-          await fs.writeFile(redirectFilePath, redirectUrl, 'utf8');
-          console.log(`Wrote URL to ${redirectFilePath}`);
+          const vrcurl = columns[1].trim(); // Extract the URL
+          const vrcurlFilePath = path.join(vrcurlFolderPath, `${i}.txt`);
+          await fs.writeFile(vrcurlFilePath, vrcurl, 'utf8');
+          console.log(`Wrote ${vrcurl} to ${vrcurlFilePath}`);
         } else {
           console.warn(`Invalid CSV line at index ${i}: ${lines[i]}`);
         }
@@ -89,18 +81,23 @@ app.get('/slides', async (req, res) => {
   }
 });
 
-
 // Middleware to handle dynamic redirects
 app.use(async (req, res, next) => {
-  const redirectFilePath = path.join(__dirname, 'redirects', `${req.url}.txt`); // Construct the file path
+  // If the URL starts with '/vrcurl', remove it
+  if (req.url.startsWith('/vrcurl')) {
+    req.url = req.url.replace('/vrcurl', '');
+  }
+
+  const vrcurlFilePath = path.join(__dirname, 'vrcurl', `${req.url}.txt`); // Construct the file path
 
   try {
       // Read the URL from the corresponding file
-      const targetUrl = await fs.readFile(redirectFilePath, 'utf8');
+      const targetUrl = await fs.readFile(vrcurlFilePath, 'utf8');
       const trimmedUrl = targetUrl.trim(); // Trim any extra whitespace or newlines
 
       if (trimmedUrl) {
           console.log(`Redirecting ${req.url} to ${trimmedUrl}`);
+          res.setHeader('Cache-Control', 'no-store'); // Prevent caching
           res.redirect(301, trimmedUrl); // 301 is a permanent redirect
       } else {
           console.warn(`Redirect file for ${req.url} is empty.`);
@@ -118,9 +115,8 @@ app.use(async (req, res, next) => {
   }
 });
 
-
 // Serve static files from a specific directory
-app.use('/assets', express.static(path.join(__dirname, 'public', 'assets')));
+app.use('/assets', express.static(path.join(__dirname, '../public/assets')));
 
 // Handle 404 for non-redirected and non-static requests
 app.use((req, res) => {
