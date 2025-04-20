@@ -1,0 +1,89 @@
+{
+  "header": {
+    "name": "Slide Director Deck",
+    "date": "2025-04-20T22:28:01.775Z",
+    "version": "1.0.0"
+  },
+  "slides": [
+    {
+      "imageUrl": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/73a1a815-2042-4369-944e-b0c61889242b/original=true,quality=90/(1).jpeg",
+      "cachedImageUrl": "https://pjottwnmhn5d9djs.public.blob.vercel-storage.com/images/0",
+      "cachedImageIndex": 0,
+      "width": 1248,
+      "height": 1824,
+      "title": "Don't Mess with Me",
+      "caption": "Slide 0",
+      "credit": "Unknown"
+    },
+    {
+      "imageUrl": "https://cdn.pixabay.com/photo/2024/03/26/00/33/ai-generated-8655658_960_720.jpg",
+      "cachedImageUrl": "https://pjottwnmhn5d9djs.public.blob.vercel-storage.com/images/1",
+      "cachedImageIndex": 1,
+      "width": 720,
+      "height": 720,
+      "title": "Bunny Gen AI",
+      "caption": "Slide 1",
+      "credit": "Unknown"
+    },
+    {
+      "imageUrl": "https://neojolly.github.io/home/showtime/paintings/1.jpg",
+      "cachedImageUrl": "https://pjottwnmhn5d9djs.public.blob.vercel-storage.com/images/2",
+      "cachedImageIndex": 2,
+      "width": 1920,
+      "height": 1080,
+      "title": "One",
+      "caption": "Slide 2",
+      "credit": "Unknown"
+    },
+    {
+      "imageUrl": "https://neojolly.github.io/home/showtime/paintings/2.jpg",
+      "cachedImageUrl": "https://pjottwnmhn5d9djs.public.blob.vercel-storage.com/images/3",
+      "cachedImageIndex": 3,
+      "width": 1920,
+      "height": 1080,
+      "title": "Two",
+      "caption": "Slide 3",
+      "credit": "Unknown"
+    },
+    {
+      "imageUrl": "https://neojolly.github.io/home/showtime/paintings/3.jpg",
+      "cachedImageUrl": "https://pjottwnmhn5d9djs.public.blob.vercel-storage.com/images/4",
+      "cachedImageIndex": 4,
+      "width": 1920,
+      "height": 1080,
+      "title": "Three",
+      "caption": "Slide 4",
+      "credit": "Unknown"
+    },
+    {
+      "imageUrl": "https://cdn.pixabay.com/photo/2022/02/13/17/22/cartoon-easter-bunny-7011655_960_720.jpg",
+      "cachedImageUrl": "https://pjottwnmhn5d9djs.public.blob.vercel-storage.com/images/5",
+      "cachedImageIndex": 5,
+      "width": 715,
+      "height": 720,
+      "title": "Cartoon Easter Bunny",
+      "caption": "Slide 5",
+      "credit": "Unknown"
+    },
+    {
+      "imageUrl": "https://cdn.pixabay.com/photo/2018/03/28/19/21/easter-3270234_960_720.jpg",
+      "cachedImageUrl": "https://pjottwnmhn5d9djs.public.blob.vercel-storage.com/images/6",
+      "cachedImageIndex": 6,
+      "width": 720,
+      "height": 720,
+      "title": "Eater Bunny Ears",
+      "caption": "Slide 6",
+      "credit": "Unknown"
+    },
+    {
+      "imageUrl": "https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/7944608b-f567-4e84-97f5-e06847671dcc/original=true,quality=90/Titan%20-%20Copy.jpeg",
+      "cachedImageUrl": "https://pjottwnmhn5d9djs.public.blob.vercel-storage.com/images/7",
+      "cachedImageIndex": 7,
+      "width": 1199,
+      "height": 2024,
+      "title": "Titan",
+      "caption": "Slide 7",
+      "credit": "Unknown"
+    }
+  ]
+}

@@ -10,10 +10,11 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@vercel/blob": "^1.0.0",
     "axios": "^1.8.4",
     "express": "^5.1.0",
     "express-rate-limit": "^7.5.0",
     "helmet": "^8.1.0",
-    "redis": "^4.7.0"
+    "sharp": "^0.34.1"
   }
 }
